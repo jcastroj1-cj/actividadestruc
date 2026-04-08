@@ -1,0 +1,15 @@
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\bin\Debug\net10.0\Actividadestru.exe
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\bin\Debug\net10.0\Actividadestru.deps.json
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\bin\Debug\net10.0\Actividadestru.runtimeconfig.json
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\bin\Debug\net10.0\Actividadestru.dll
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\bin\Debug\net10.0\Actividadestru.pdb
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\obj\Debug\net10.0\Actividadestru.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\obj\Debug\net10.0\Actividadestru.AssemblyInfoInputs.cache
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\obj\Debug\net10.0\Actividadestru.AssemblyInfo.cs
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\obj\Debug\net10.0\Actividadestru.csproj.CoreCompileInputs.cache
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\obj\Debug\net10.0\Actividadestru.sourcelink.json
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\obj\Debug\net10.0\Actividadestru.dll
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\obj\Debug\net10.0\refint\Actividadestru.dll
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\obj\Debug\net10.0\Actividadestru.pdb
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\obj\Debug\net10.0\Actividadestru.genruntimeconfig.cache
+C:\Users\Jean Carlos\Videos\Actividad\Actividadestru\Actividadestru\obj\Debug\net10.0\ref\Actividadestru.dll
