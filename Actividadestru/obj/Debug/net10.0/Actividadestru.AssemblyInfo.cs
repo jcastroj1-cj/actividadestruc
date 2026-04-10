@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Actividadestru")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6280089b6a8927fb7c8d28042a984a4521a0c15")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a6cb66448d1db119b235824c8a9dcced3469fa8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Actividadestru")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Actividadestru")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
