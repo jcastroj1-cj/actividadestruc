@@ -13,7 +13,7 @@ namespace EstructuraApp
             //Instancia
 
             var alumno1 = new Estudiante("Carlos Pérez", 19, 8.5);
-            var alumno2 = new Estudiante("María López", 21, 9.2);
+            var alumno2 = new Estudiante("María López", 21, 6.5);
             var alumno3 = new Estudiante("Juan Torres", 20, 7.8);
 
             Estudiante[] listaAlumnos = { alumno1, alumno2, alumno3 };
