@@ -1,10 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace EstructuraApp
 {
     // Definición del record struct
-    public record struct
-        Estudiante(string Nombre, int Edad, double Promedio);
+    public class Estudiante 
+    { public string Nombre { get; set; } 
+      public int Edad { get; set; }
+      public double Promedio { get; set; }
+
+
+        public Estudiante(string nombre, int edad, double promedio)
+        {
+            Nombre = nombre;
+            Edad = edad;
+            Promedio = promedio;
+        }
+
+        // Método mostrarInfo
+        public void MostrarInfo()
+        {
+            Console.WriteLine($"Estudiante: {Nombre} | Edad: {Edad} | Promedio: {Promedio}");
+        }
+
+    }
+
 
     class Program
     {
