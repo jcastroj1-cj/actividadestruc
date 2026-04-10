@@ -31,21 +31,19 @@ namespace EstructuraApp
     {
         static void Main(string[] args)
         {
-            //Instancia
-
-            var alumno1 = new Estudiante("Carlos Pérez", 19, 8.5);
-            var alumno2 = new Estudiante("María López", 21, 6.5);
-            var alumno3 = new Estudiante("Juan Torres", 20, 7.8);
-
-            Estudiante[] listaAlumnos = { alumno1, alumno2, alumno3 };
-
-            //Mostrar en pantalla.
-
-            Console.WriteLine("--- Lista de Estudiantes ---");
-            foreach (var estudiante in listaAlumnos)
+            // las 3 instancias y almacenarlas en un arreglo
+            Estudiante[] alumnos = new Estudiante[]
             {
-                Console.WriteLine($"Nombre: {estudiante.Nombre}, Edad: {estudiante.Edad}, Promedio: {estudiante.Promedio}");
+                new Estudiante("Ana García", 22, 9.5),
+                new Estudiante("Luis Martínez", 18, 8.2),
+                new Estudiante("Sofía Castro", 20, 7.9)
+            };
 
+            //  se llama al método MostrarInfo para cada objeto
+            Console.WriteLine("--- Información de Alumnos ---");
+            foreach (var alumno in alumnos)
+            {
+                alumno.MostrarInfo();
             }
         }
     }
