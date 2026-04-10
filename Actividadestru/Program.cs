@@ -3,7 +3,7 @@
 namespace EstructuraApp
 {
     // Definición del record struct
-    public record struct 
+    public record struct
         Estudiante(string Nombre, int Edad, double Promedio);
 
     class Program
@@ -20,9 +20,12 @@ namespace EstructuraApp
 
             //Mostrar en pantalla.
 
-            Console.WriteLine($"{alumno1.Nombre} tiene un promedio de {alumno1.Promedio}");
-            Console.WriteLine($"{alumno2.Nombre} tiene un promedio de {alumno2.Promedio}");
-            Console.WriteLine($"{alumno3.Nombre} tiene un promedio de {alumno3.Promedio}");
+            Console.WriteLine("--- Lista de Estudiantes ---");
+            foreach (var estudiante in listaAlumnos)
+            {
+                Console.WriteLine($"Nombre: {estudiante.Nombre}, Edad: {estudiante.Edad}, Promedio: {estudiante.Promedio}");
+
+            }
         }
     }
 }
