@@ -1,56 +1,44 @@
 ﻿
 using System;
 
-public struct ConversionObj
+public struct ConversionRecord(String Base, char[] Digitos)
 {
-    public char[] Digitos;
-    public string Base;
-
-    //Contructor
-    public ConversionObj(char[] d, string nombreBase)
-    {
-        Digitos = d;
-        Base = nombreBase;
-    }
-
-    //Metodo
     public string ObtenerValor()
+
     {
         return new string(Digitos);
     }
-
     public void MostrarResultado()
     {
-        Console.WriteLine($"Base: {ObtenerValor ()}");
+        Console.WriteLine($"{Base}: {ObtenerValor()}");
     }
-}
 
-class Program
-{
-    static void Main()
+    class Program
     {
-        Console.Write("Número base 10: ");
-        if (!int.TryParse(Console.ReadLine(), out int n))
+        static void Main()
         {
-            Console.WriteLine("Entrada inválida.");
-            return;
+            Console.Write("Número base 10: ");
+            if (!int.TryParse(Console.ReadLine(), out int n))
+            {
+                Console.WriteLine("Entrada inválida.");
+                return;
+            }
+
+            // record como elementos guardados en un arreglo
+            ConversionRecord[] conversiones = new ConversionRecord[]
+                 {
+                     new ConversionRecord("Binario", Convert.ToString(n, 2).ToCharArray()),
+                     new ConversionRecord("Octal", Convert.ToString(n, 8).ToCharArray()),
+                     new ConversionRecord("Hexadecimal", Convert.ToString(n, 16).ToUpper().ToCharArray())
+                 };
+
+            Console.WriteLine("\nResultados:");
+            foreach (var conversion in conversiones)
+            {
+                conversion.MostrarResultado();
+            }
         }
 
-        // Objeto como elementos guardados en un arreglo
-        ConversionObj[] conversiones = new ConversionObj[]
-        {
-            new ConversionObj(Convert.ToString(n, 2).ToCharArray(), "Binario"),
-            new ConversionObj(Convert.ToString(n, 8).ToCharArray(), "Octal"),
-            new ConversionObj(Convert.ToString(n, 16).ToUpper().ToCharArray(), "Hexadecimal")
-        };
-
-        string[] nombres = { "Binario", "Octal", "Hexadecimal" };
-
-        Console.WriteLine("\nResultados:");
-        foreach (var conversion in conversiones)
-        {
-           conversion.MostrarResultado();
-        }
     }
 }
 
