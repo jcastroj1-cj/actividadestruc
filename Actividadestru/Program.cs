@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 
 public struct ConversionStruct
 {
@@ -20,15 +21,29 @@ class Program
     static void Main()
     {
         Console.Write("Número base 10: ");
-        int n = int.Parse(Console.ReadLine());
+        if (!int.TryParse(Console.ReadLine(), out int n))
+        {
+            Console.WriteLine("Entrada inválida.");
+            return;
+        }
 
-        ConversionStruct bin = new ConversionStruct(Convert.ToString(n, 2).ToCharArray());
-        ConversionStruct oct = new ConversionStruct(Convert.ToString(n, 8).ToCharArray());
-        ConversionStruct hex = new ConversionStruct(Convert.ToString(n, 16).ToUpper().ToCharArray());
+        // Struct como elementos guardados en un arreglo
+        ConversionStruct[] conversiones = new ConversionStruct[]
+        {
+            new ConversionStruct(Convert.ToString(n, 2).ToCharArray()),
+            new ConversionStruct(Convert.ToString(n, 8).ToCharArray()),
+            new ConversionStruct(Convert.ToString(n, 16).ToUpper().ToCharArray())
+        };
+
+        string[] nombres = { "Binario", "Octal", "Hexadecimal" };
 
         Console.WriteLine("\nResultados:");
-        Console.WriteLine("Binario: " + bin.ObtenerValor());
-        Console.WriteLine("Octal: " + oct.ObtenerValor());
-        Console.WriteLine("Hexadecimal: " + hex.ObtenerValor());
+        for (int i = 0; i < conversiones.Length; i++)
+        {
+            Console.WriteLine($"{nombres[i]}: {conversiones[i].ObtenerValor()}");
+        }
     }
 }
+
+
+
