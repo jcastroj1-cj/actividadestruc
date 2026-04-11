@@ -10,17 +10,30 @@ package actividadestruc;
  */
 public class Actividadestruc {
 
-  // Definir el record
     record Estudiante(String nombre, int edad, double promedio) {}
 
     public static void main(String[] args) {
 
-        // Crear instancia
-        Estudiante e1 = new Estudiante("Ana García", 22, 9.5);
+        // Guardar las 3 instancias en un arreglo
+        Estudiante[] estudiantes = {
+            new Estudiante("Ana García", 22, 9.5),
+            new Estudiante("Luis Martínez", 18, 8.2),
+            new Estudiante("Sofía Castro", 20, 7.9)
+        };
 
-        // Mostrar información
-        System.out.println("Nombre: " + e1.nombre());
-        System.out.println("Edad: " + e1.edad());
-        System.out.println("Promedio: " + e1.promedio());
+        // Mostrar antes del cambio
+        System.out.println("--- Antes del cambio ---");
+        for (Estudiante e : estudiantes) {
+            System.out.println("Nombre: " + e.nombre() + " | Edad: " + e.edad() + " | Promedio: " + e.promedio());
+        }
+
+        // Cambiar el promedio de Luis Martínez (índice 1)
+        estudiantes[1] = new Estudiante(estudiantes[1].nombre(), estudiantes[1].edad(), 9.2);
+
+        // Mostrar después del cambio
+        System.out.println("\n--- Después del cambio ---");
+        for (Estudiante e : estudiantes) {
+            System.out.println("Nombre: " + e.nombre() + " | Edad: " + e.edad() + " | Promedio: " + e.promedio());
+        }
     }
 }
