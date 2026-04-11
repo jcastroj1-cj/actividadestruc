@@ -1,18 +1,27 @@
 ﻿
 using System;
 
-public struct ConversionStruct
+public struct ConversionObj
 {
     public char[] Digitos;
+    public string Base;
 
-    public ConversionStruct(char[] d)
+    //Contructor
+    public ConversionObj(char[] d, string nombreBase)
     {
         Digitos = d;
+        Base = nombreBase;
     }
 
+    //Metodo
     public string ObtenerValor()
     {
         return new string(Digitos);
+    }
+
+    public void MostrarResultado()
+    {
+        Console.WriteLine($"Base: {ObtenerValor ()}");
     }
 }
 
@@ -27,20 +36,20 @@ class Program
             return;
         }
 
-        // Struct como elementos guardados en un arreglo
-        ConversionStruct[] conversiones = new ConversionStruct[]
+        // Objeto como elementos guardados en un arreglo
+        ConversionObj[] conversiones = new ConversionObj[]
         {
-            new ConversionStruct(Convert.ToString(n, 2).ToCharArray()),
-            new ConversionStruct(Convert.ToString(n, 8).ToCharArray()),
-            new ConversionStruct(Convert.ToString(n, 16).ToUpper().ToCharArray())
+            new ConversionObj(Convert.ToString(n, 2).ToCharArray(), "Binario"),
+            new ConversionObj(Convert.ToString(n, 8).ToCharArray(), "Octal"),
+            new ConversionObj(Convert.ToString(n, 16).ToUpper().ToCharArray(), "Hexadecimal")
         };
 
         string[] nombres = { "Binario", "Octal", "Hexadecimal" };
 
         Console.WriteLine("\nResultados:");
-        for (int i = 0; i < conversiones.Length; i++)
+        foreach (var conversion in conversiones)
         {
-            Console.WriteLine($"{nombres[i]}: {conversiones[i].ObtenerValor()}");
+           conversion.MostrarResultado();
         }
     }
 }
