@@ -1,54 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
 
-
-namespace EstructuraApp
+public struct ConversionStruct
 {
-    // Definición del record struct
-    public class Estudiante 
-    { public string Nombre { get; set; } 
-      public int Edad { get; set; }
-      public double Promedio { get; private set; }
+    public char[] Digitos;
 
-
-        public Estudiante(string nombre, int edad, double promedio)
-        {
-            Nombre = nombre;
-            Edad = edad;
-            Promedio = promedio;
-        }
-
-        public void setPromedio(double nuevoPromedio)
-        {
-            Promedio = nuevoPromedio;
-        }
-        public void MostrarInfo()
-        {
-            Console.WriteLine($"Estudiante: {Nombre} | Edad: {Edad} | Promedio: {Promedio}");
-        }
-
+    public ConversionStruct(char[] d)
+    {
+        Digitos = d;
     }
 
-    class Program
+    public string ObtenerValor()
     {
-        static void Main(string[] args)
-        {
-            // las 3 instancias y almacenarlas en un arreglo
-            Estudiante[] alumnos = new Estudiante[]
-            {
-                new Estudiante("Ana García", 22, 9.5),
-                new Estudiante("Luis Martínez", 18, 8.2),
-                new Estudiante("Sofía Castro", 20, 7.9)
-            };
+        return new string(Digitos);
+    }
+}
 
-           alumnos[1].setPromedio(9.2);
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Número base 10: ");
+        int n = int.Parse(Console.ReadLine());
 
+        ConversionStruct bin = new ConversionStruct(Convert.ToString(n, 2).ToCharArray());
+        ConversionStruct oct = new ConversionStruct(Convert.ToString(n, 8).ToCharArray());
+        ConversionStruct hex = new ConversionStruct(Convert.ToString(n, 16).ToUpper().ToCharArray());
 
-            Console.WriteLine("--- Información de Alumnos actualizada ---");
-            foreach (var alumno in alumnos)
-            {
-                alumno.MostrarInfo();
-            }
-        }
+        Console.WriteLine("\nResultados:");
+        Console.WriteLine("Binario: " + bin.ObtenerValor());
+        Console.WriteLine("Octal: " + oct.ObtenerValor());
+        Console.WriteLine("Hexadecimal: " + hex.ObtenerValor());
     }
 }
