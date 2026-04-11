@@ -1,53 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
 
-
-namespace EstructuraApp
+namespace ProyectoNotas
 {
-    // Definición del record struct
-    public class Estudiante 
-    { public string Nombre { get; set; } 
-      public int Edad { get; set; }
-      public double Promedio { get; private set; }
+    // Definición de la clase en objeto
+    public class Estudiante
+    {
+        public string Nombre { get; set; }
 
+       
+        public int[,] NotasMatriz = new int[3, 2];
 
-        public Estudiante(string nombre, int edad, double promedio)
+        public Estudiante(string nombre)
         {
             Nombre = nombre;
-            Edad = edad;
-            Promedio = promedio;
         }
 
-        public void setPromedio(double nuevoPromedio)
+        public void MostrarPromedio()
         {
-            Promedio = nuevoPromedio;
+            Console.WriteLine($"\n--- Notas de {Nombre} ---");
+            for (int i = 0; i < 3; i++)
+            {
+                double suma = NotasMatriz[i, 0] + NotasMatriz[i, 1];
+                Console.WriteLine($"Materia {i + 1}: Promedio = {suma / 2}");
+            }
         }
-        public void MostrarInfo()
-        {
-            Console.WriteLine($"Estudiante: {Nombre} | Edad: {Edad} | Promedio: {Promedio}");
-        }
-
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            // las 3 instancias y almacenarlas en un arreglo
-            Estudiante[] alumnos = new Estudiante[]
+            // Arreglo de Objetos
+            Estudiante[] listaEstudiantes = new Estudiante[2];
+
+            // Inicialización
+            listaEstudiantes[0] = new Estudiante("Ana");
+            listaEstudiantes[1] = new Estudiante("Luis");
+
+            // Asignación de datos en la Matriz (Simulación)
+            // Ana: Materia 0 (Mate), Parcial 0 = 85 | Parcial 1 = 90
+            listaEstudiantes[0].NotasMatriz[0, 0] = 85;
+            listaEstudiantes[0].NotasMatriz[0, 1] = 90;
+
+            // Luis: Materia 1 (Programación), Parcial 0 = 70 | Parcial 1 = 100
+            listaEstudiantes[1].NotasMatriz[1, 0] = 70;
+            listaEstudiantes[1].NotasMatriz[1, 1] = 100;
+
+            // Procesamiento
+            foreach (var est in listaEstudiantes)
             {
-                new Estudiante("Ana García", 22, 9.5),
-                new Estudiante("Luis Martínez", 18, 8.2),
-                new Estudiante("Sofía Castro", 20, 7.9)
-            };
-
-           alumnos[1].setPromedio(9.2);
-
-
-            Console.WriteLine("--- Información de Alumnos actualizada ---");
-            foreach (var alumno in alumnos)
-            {
-                alumno.MostrarInfo();
+                est.MostrarPromedio();
             }
         }
     }
